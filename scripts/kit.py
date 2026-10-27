@@ -154,14 +154,20 @@ class Svg:
         self.parts.append(s)
         return self
 
-    def text(self, x, y, s, key="sans", size=14, fill=None, anchor="start", tracking=0.0, extra=""):
+    def wrap_since(self, mark, attrs):
+        """Wrap everything added since len(parts) == mark in one <g attrs>, e.g. to animate it as a unit."""
+        self.parts[mark:] = [f"<g {attrs}>{''.join(self.parts[mark:])}</g>"]
+        return self
+
+    def text(self, x, y, s, key="sans", size=14, fill=None, anchor="start", tracking=0.0, extra="", anim=""):
+        """`anim` is raw SMIL (<set>/<animate>) placed inside the <text>."""
         self.used.setdefault(key, set()).update(s)
         fam = FONTS[key][1]
         ls = f' letter-spacing="{tracking * size:.2f}"' if tracking else ""
         a = f' text-anchor="{anchor}"' if anchor != "start" else ""
         self.parts.append(
             f'<text x="{x:.1f}" y="{y:.1f}" font-family="{fam}" font-size="{size}"'
-            f' fill="{fill or self.c["fg"]}"{a}{ls}{extra}>{esc(s)}</text>'
+            f' fill="{fill or self.c["fg"]}"{a}{ls}{extra}>{anim}{esc(s)}</text>'
         )
         return self
 
