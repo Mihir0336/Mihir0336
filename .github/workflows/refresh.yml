@@ -24,7 +24,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install fonttools brotli
+      - run: pip install fonttools==4.65.0 brotli
       - name: Build cards
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

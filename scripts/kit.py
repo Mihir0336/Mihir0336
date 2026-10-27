@@ -106,7 +106,9 @@ def wrap(text, key, size, width):
 
 @lru_cache(maxsize=None)
 def _subset_b64(key, chars):
-    f = TTFont(FONT_DIR / FONTS[key][0])
+    # recalcTimestamp=False keeps the output byte-identical between runs, so the
+    # refresh workflow only commits when the data actually changed
+    f = TTFont(FONT_DIR / FONTS[key][0], recalcTimestamp=False)
     opts = Options()
     opts.flavor = "woff2"
     opts.layout_features = ["kern", "liga", "calt"]
