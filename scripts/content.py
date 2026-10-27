@@ -17,6 +17,9 @@ PROFILE = {
     "linkedin": "https://www.linkedin.com/in/mihirpatel0336",
 }
 
+# The Work section (experience cards) is hidden on the profile; flip to True to bring it back.
+SHOW_WORK = False
+
 EXPERIENCE = [
     {
         "slug": "legacy-network",

@@ -11,7 +11,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import activity  # noqa: E402
 import cards  # noqa: E402
-from content import EXPERIENCE, PROFILE, PROJECTS, USER  # noqa: E402
+from content import EXPERIENCE, PROFILE, PROJECTS, SHOW_WORK, USER  # noqa: E402
 from kit import ROOT  # noqa: E402
 
 
@@ -42,12 +42,13 @@ def readme():
         out.append(f'<a href="{href}">{pic(f"chip-{name}", alt, width=None, mobile=False)}</a>')
     out += ["", "<br><br>", ""]
 
-    out.append(pic("h-work", "Work: Paid to ship for live GTA V roleplay servers"))
-    out.append("")
-    for job in EXPERIENCE:
-        out.append(pic(f"exp-{job['slug']}", f"{job['company']}, {job['role']}, {job['dates']}"))
+    if SHOW_WORK:
+        out.append(pic("h-work", "Work: Paid to ship for live GTA V roleplay servers"))
         out.append("")
-    out += ["<br>", ""]
+        for job in EXPERIENCE:
+            out.append(pic(f"exp-{job['slug']}", f"{job['company']}, {job['role']}, {job['dates']}"))
+            out.append("")
+        out += ["<br>", ""]
 
     out.append(pic("h-projects", "Projects: Full-stack apps I've built end to end"))
     out.append("")

@@ -15,14 +15,6 @@ Based in Ahmedabad, open to full-time roles.
 
 <br><br>
 
-<picture><source media="(prefers-color-scheme: dark) and (max-width: 640px)" srcset="assets/dark/h-work.m.svg"><source media="(max-width: 640px)" srcset="assets/light/h-work.m.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/dark/h-work.svg"><img src="assets/light/h-work.svg" width="100%" alt="Work: Paid to ship for live GTA V roleplay servers"></picture>
-
-<picture><source media="(prefers-color-scheme: dark) and (max-width: 640px)" srcset="assets/dark/exp-legacy-network.m.svg"><source media="(max-width: 640px)" srcset="assets/light/exp-legacy-network.m.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/dark/exp-legacy-network.svg"><img src="assets/light/exp-legacy-network.svg" width="100%" alt="Legacy Network, Full Stack Developer, Aug 2025 – Present"></picture>
-
-<picture><source media="(prefers-color-scheme: dark) and (max-width: 640px)" srcset="assets/dark/exp-yatra-roleplay.m.svg"><source media="(max-width: 640px)" srcset="assets/light/exp-yatra-roleplay.m.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/dark/exp-yatra-roleplay.svg"><img src="assets/light/exp-yatra-roleplay.svg" width="100%" alt="Yatra Roleplay, Full Stack Developer, Aug 2025 – Present"></picture>
-
-<br>
-
 <picture><source media="(prefers-color-scheme: dark) and (max-width: 640px)" srcset="assets/dark/h-projects.m.svg"><source media="(max-width: 640px)" srcset="assets/light/h-projects.m.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/dark/h-projects.svg"><img src="assets/light/h-projects.svg" width="100%" alt="Projects: Full-stack apps I've built end to end"></picture>
 
 <a href="https://mihir0336.vercel.app/#projects"><picture><source media="(prefers-color-scheme: dark) and (max-width: 640px)" srcset="assets/dark/proj-inventory-billing.m.svg"><source media="(max-width: 640px)" srcset="assets/light/proj-inventory-billing.m.svg"><source media="(prefers-color-scheme: dark)" srcset="assets/dark/proj-inventory-billing.svg"><img src="assets/light/proj-inventory-billing.svg" width="49%" alt="Inventory & Billing System: Full-stack inventory and billing app with an analytics dashboard."></picture></a>

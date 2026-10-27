@@ -1,6 +1,6 @@
 """Static cards: hero, link chips, section headers, experience, projects, stack, footer."""
 
-from content import EDUCATION, EXPERIENCE, PROFILE, PROJECTS, STACK, USER
+from content import EDUCATION, EXPERIENCE, PROFILE, PROJECTS, SHOW_WORK, STACK, USER
 from kit import Svg, measure, wrap
 
 # Brand colours; None means "use the foreground colour" (black logos on a dark card).
@@ -125,7 +125,7 @@ def hero(theme, mobile=False):
         ], 32)
         for i, line in enumerate(wrap(p["pitch"], "sans", 17, 590)):
             s.text(sx, 276 + i * 27, line, "sans", 17, c["muted"])
-        rows = [("now", "Legacy Network (US) · Yatra Roleplay (IN)"), ("study", EDUCATION)]
+        rows = [("web", PROFILE["site"].removeprefix("https://")), ("study", EDUCATION)]
         for i, (k, v) in enumerate(rows):
             yy = 410 + i * 28
             s.text(sx, yy, k, "mono", 12.5, c["accent"])
@@ -445,7 +445,7 @@ def build_all():
             hero(theme, m)
             stack(theme, m)
             footer(theme, m)
-            for job in EXPERIENCE:
+            for job in EXPERIENCE if SHOW_WORK else []:
                 experience(theme, job, m)
             for pr in PROJECTS:
                 project(theme, pr, m)
@@ -458,8 +458,12 @@ def build_all():
 
 
 HEADERS = [
-    ("work", "01", "Work", "Paid to ship for live GTA V roleplay servers"),
-    ("projects", "02", "Projects", "Full-stack apps I've built end to end"),
-    ("stack", "03", "Stack", "What my work is made of"),
-    ("activity", "04", "Activity", "Every contribution in the last year"),
+    ("work", "Work", "Paid to ship for live GTA V roleplay servers"),
+    ("projects", "Projects", "Full-stack apps I've built end to end"),
+    ("stack", "Stack", "What my work is made of"),
+    ("activity", "Activity", "Every contribution in the last year"),
 ]
+if not SHOW_WORK:
+    HEADERS = HEADERS[1:]
+# number the sections that are actually shown: ("projects", "01", ...)
+HEADERS = [(name, f"{i:02}", title, sub) for i, (name, title, sub) in enumerate(HEADERS, 1)]
