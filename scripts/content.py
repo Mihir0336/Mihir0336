@@ -1,4 +1,4 @@
-"""Everything the cards say. Mirrors src/content.ts in the portfolio repo; keep the two in sync."""
+"""Everything the cards say. Source of truth is the resume (Mihir_Patel_CV.pdf, updated 2026-10-28)."""
 
 USER = "Mihir0336"
 
@@ -7,9 +7,9 @@ PROFILE = {
     "role": "Full Stack Developer",
     "location": "Ahmedabad, IN",
     "pitch": (
-        "I build full-stack web apps with Next.js, React and TypeScript, and for 1+ year "
-        "I've been paid to ship gameplay systems and in-game UIs remotely for two live "
-        "GTA V roleplay communities."
+        "I build full-stack web apps with React, Next.js and TypeScript. For 1+ year I've "
+        "shipped production features remotely, for a US-based gaming platform and a "
+        "freelance client's WhatsApp marketing SaaS."
     ),
     "email": "mihirpatel0336@gmail.com",
     "site": "https://mihir0336.vercel.app",
@@ -24,29 +24,30 @@ EXPERIENCE = [
     {
         "slug": "legacy-network",
         "company": "Legacy Network",
-        "note": "US-based GTA V roleplay server",
+        "note": "US-based multiplayer GTA V roleplay server",
         "region": "US",
         "role": "Full Stack Developer",
         "dates": "Aug 2025 – Present",
         "points": [
-            "Build custom FiveM gameplay scripts in Lua, on both the client and server side.",
-            "Build in-game UIs in React and Svelte, connected to Lua through FiveM's NUI messaging.",
-            "Work remotely with the server owners across time zones.",
+            "Build in-game user interfaces in React and Svelte for a live multiplayer GTA V roleplay server.",
+            "Write client- and server-side logic in Lua and connect it to the React/Svelte frontends through FiveM NUI.",
+            "Ship features to a live production server, working remotely with the US-based owners across time zones.",
         ],
-        "tags": ["Lua", "React", "Svelte", "FiveM", "NUI"],
+        "tags": ["React", "Svelte", "Lua", "FiveM", "NUI"],
     },
     {
-        "slug": "yatra-roleplay",
-        "company": "Yatra Roleplay",
-        "note": "Indian GTA V roleplay server",
-        "region": "IN",
+        "slug": "whatsapp-saas",
+        "company": "WhatsApp Marketing Platform",
+        "note": "Freelance client project",
+        "region": "FL",
         "role": "Full Stack Developer",
-        "dates": "Aug 2025 – Present",
+        "dates": "May 2026 – Jun 2026",
         "points": [
-            "Write custom Lua scripts and React/Svelte interfaces.",
-            "Ship features for two live communities in parallel.",
+            "Customized and extended a production WhatsApp marketing SaaS built on React, TypeScript, Express and PostgreSQL.",
+            "Shipped template rotation, per-account channel limits, group exclusion and reply tracking with Excel exports.",
+            "Deployed and maintained it on a Linux VPS with Nginx and PM2, including schema migrations.",
         ],
-        "tags": ["Lua", "React", "Svelte", "FiveM"],
+        "tags": ["React", "TypeScript", "Express", "PostgreSQL", "Redis"],
     },
 ]
 
@@ -55,8 +56,8 @@ PROJECTS = [
         "slug": "inventory-billing",
         "title": "Inventory & Billing System",
         "summary": "Full-stack inventory and billing app with an analytics dashboard.",
-        "highlights": ["Authentication", "Stock tracking", "GST-inclusive billing", "Dashboard with charts"],
-        "tags": ["Next.js", "TypeScript", "Prisma ORM", "MySQL", "NextAuth", "Tailwind CSS"],
+        "highlights": ["NextAuth authentication", "Stock tracking", "GST-inclusive bills", "Dashboard, dark/light mode"],
+        "tags": ["Next.js", "TypeScript", "MySQL", "NextAuth", "Tailwind CSS"],
         "cover": "billing",
         "lang": "TypeScript",
         "repo": None,  # private for now
@@ -65,9 +66,9 @@ PROJECTS = [
     {
         "slug": "finance-visualizer",
         "title": "Personal Finance Visualizer",
-        "summary": "Personal finance tracker with budgets and monthly charts.",
-        "highlights": ["7 REST endpoints", "Monthly charts", "Budgets", "Cross-tab sync"],
-        "tags": ["Next.js 14", "TypeScript", "MongoDB", "Recharts", "shadcn/ui"],
+        "summary": "Finance tracker with budgets and monthly charts on MongoDB Atlas.",
+        "highlights": ["7 REST endpoints", "Category budgets", "Auto-refresh, cross-tab sync", "Paginated loading"],
+        "tags": ["Next.js", "TypeScript", "MongoDB", "shadcn/ui"],
         "cover": "finance",
         "lang": "TypeScript",
         "repo": "finance-visualizer",
@@ -75,42 +76,32 @@ PROJECTS = [
     {
         "slug": "unimart",
         "title": "UniMart, University Marketplace",
-        "summary": "University marketplace with separate admin, seller and buyer portals.",
-        "highlights": ["Three role portals", "Cart and coupons", "Order tracking", "SQLi and XSS protection"],
-        "tags": ["PHP", "MySQL", "JavaScript", "jQuery/AJAX", "Bootstrap"],
+        "summary": "Multi-role marketplace with separate admin, seller and buyer portals.",
+        "highlights": ["Search, cart, coupons", "Order tracking", "Admin moderation", "SQLi and XSS protection"],
+        "tags": ["PHP", "MySQL", "JavaScript", "AJAX", "Bootstrap"],
         "cover": "marketplace",
         "lang": "PHP",
         "repo": "UniMart-Groceries",
-    },
-    {
-        "slug": "stock-management",
-        "title": "Stock Management System",
-        "summary": "Inventory and GST billing system built for Agricon Shop.",
-        "highlights": ["Inventory management", "GST billing", "Admin panel"],
-        "tags": ["PHP", "MySQL", "JavaScript"],
-        "cover": "stock",
-        "lang": "PHP",
-        "repo": "Stock-Management-System",
     },
 ]
 
 # (label, simple-icons slug or a built-in glyph name)
 STACK = [
-    ("Languages", "What I write every day", [
-        ("JavaScript", "javascript"), ("TypeScript", "typescript"), ("Lua", "lua"), ("PHP", "php"),
-        ("SQL", "@table"), ("HTML", "html5"), ("CSS", "css3"),
+    ("Languages", "What I build with", [
+        ("JavaScript", "javascript"), ("TypeScript", "typescript"), ("Python", "python"), ("PHP", "php"),
+        ("Lua", "lua"), ("SQL", "@table"), ("HTML/CSS", "html5"),
     ]),
     ("Frontend", "Interfaces on the web and in game", [
         ("React", "react"), ("Next.js", "nextdotjs"), ("Svelte", "svelte"), ("Tailwind", "tailwindcss"),
-        ("shadcn/ui", "shadcnui"), ("Framer", "framer"), ("Recharts", "@bars"),
+        ("shadcn/ui", "shadcnui"),
     ]),
     ("Backend & data", "APIs, auth and storage", [
-        ("Node.js", "nodedotjs"), ("Express", "express"), ("REST", "@rest"), ("NextAuth", "@lock"),
-        ("Prisma", "prisma"), ("MySQL", "@sql"), ("MongoDB", "mongodb"),
+        ("Node.js", "nodedotjs"), ("API routes", "@route"), ("REST", "@rest"), ("NextAuth", "@lock"),
+        ("MySQL", "@sql"), ("MongoDB", "mongodb"),
     ]),
-    ("Game dev & tools", "FiveM, NUI and shipping", [
-        ("FiveM", "fivem"), ("NUI", "@nui"), ("Git", "git"), ("GitHub", "github"),
-        ("Vercel", "vercel"), ("VS Code", "@code"),
+    ("Tools & deploy", "From commit to a live server", [
+        ("Git", "git"), ("GitHub", "github"), ("Vercel", "vercel"), ("Linux VPS", "linux"),
+        ("Nginx", "nginx"), ("PM2", "pm2"), ("AI tools", "@spark"),
     ]),
 ]
 

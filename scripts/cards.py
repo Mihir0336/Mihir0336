@@ -10,6 +10,7 @@ BRAND = {
     "nextdotjs": None, "svelte": "#FF3E00", "tailwindcss": "#06B6D4", "shadcnui": None, "framer": "#0055FF",
     "nodedotjs": "#5FA04E", "express": None, "prisma": None, "mysql": "#4479A1", "mongodb": "#47A248",
     "fivem": "#F40552", "git": "#F05032", "github": None, "vercel": None,
+    "python": ("#5a9fd4", "#3776AB"), "linux": None, "nginx": "#009639", "pm2": ("#7a8bd9", "#2B037A"),
 }
 
 
@@ -366,6 +367,10 @@ def tile_glyph(s, slug, cx, cy, size):
         g += f'<ellipse cx="12" cy="5" rx="8" ry="3" {st}/><path d="M4 5 V19 c0 1.7 3.6 3 8 3 s8 -1.3 8 -3 V5 M4 12 c0 1.7 3.6 3 8 3 s8 -1.3 8 -3" {st}/>'
     elif kind == "table":
         g += f'<rect x="3" y="4" width="18" height="16" rx="2.5" {st}/><path d="M3 9.5 H21 M3 14.75 H21 M9.5 9.5 V20" {st}/>'
+    elif kind == "route":
+        g += f'<path d="M3 12 H9 L14 6 H21 M9 12 L14 18 H21 M18 3 L21 6 L18 9 M18 15 L21 18 L18 21" {st}/>'
+    elif kind == "spark":
+        g += f'<path d="M12 3 L13.8 9.2 L20 11 L13.8 12.8 L12 19 L10.2 12.8 L4 11 L10.2 9.2 Z" {st}/><path d="M19 3 V6 M17.5 4.5 H20.5" {st}/>'
     elif kind == "bars":
         g += f'<path d="M3 21 H21 M6.5 17 V11 M11 17 V6 M15.5 17 V13 M20 17 V8" {st}/>'
     elif kind == "rest":

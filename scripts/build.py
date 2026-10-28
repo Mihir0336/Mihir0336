@@ -11,7 +11,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import activity  # noqa: E402
 import cards  # noqa: E402
-from content import EXPERIENCE, PROFILE, PROJECTS, SHOW_WORK, USER  # noqa: E402
+from content import EXPERIENCE, PROFILE, PROJECTS, SHOW_WORK, STACK, USER  # noqa: E402
 from kit import ROOT  # noqa: E402
 
 
@@ -30,7 +30,7 @@ def readme():
     p = PROFILE
     out = ['<div align="center">', ""]
     out.append(pic("hero", f"{p['name']}, {p['role']}. {p['pitch']}"))
-    out += ["", "<p>", "Next.js, React and TypeScript on the web,<br>", "Lua and NUI inside live GTA V roleplay servers.<br>",
+    out += ["", "<p>", "React, Next.js and TypeScript on the web,<br>", "Lua and NUI inside a live GTA V roleplay server.<br>",
             "Based in Ahmedabad, open to full-time roles.", "</p>", ""]
     chips = [
         (p["linkedin"], "linkedin", "LinkedIn"),
@@ -62,7 +62,8 @@ def readme():
 
     out.append(pic("h-stack", "Stack: What my work is made of"))
     out.append("")
-    out.append(pic("stack", "Stack: JavaScript, TypeScript, Lua, PHP, SQL, React, Next.js, Svelte, Tailwind, Node.js, Express, Prisma, MySQL, MongoDB, FiveM, Git, Vercel"))
+    stack_names = ", ".join(n for _, _, items in STACK for n, _ in items)
+    out.append(pic("stack", f"Stack: {stack_names}"))
     out += ["", "<br><br>", ""]
 
     out.append(pic("h-activity", "Activity: Every contribution in the last year"))
